@@ -100,7 +100,7 @@ exports.schedule = function(req, res){
 			metadata: root.sports_meta.season_meta,
 			games: gamesArr
 		 });
-		res.send(scheduleList);
+		res.jsonp(scheduleList);
 	});
 };
 

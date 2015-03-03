@@ -19,7 +19,7 @@ var cheerio = require('cheerio')
 * @return JSON response
 */
 exports.index = function(req, res){	
-	res.send(apiDoc.nba());
+	res.jsonp(apiDoc.nba());
 };
 
 
@@ -51,7 +51,7 @@ exports.teams = function(req, res){
 				})
 			});
 		});
-	    res.send(teamList);
+	    res.jsonp(teamList);
 	});
 };
 
@@ -61,7 +61,7 @@ exports.teams = function(req, res){
 * @return JSON response
 */
 exports.teamInfo = function(req, res){
-  res.send("respond with a resource");
+  res.jsonp("respond with a resource");
 };
 
 
@@ -136,7 +136,7 @@ exports.teamRoster = function(req, res){
 			}
 			
 		});
-		res.send(players);
+		res.jsonp(players);
 	});
 };
 
@@ -183,7 +183,7 @@ exports.schedule = function(req, res){
 exports.playersList = function(req, res){  
 	curl.request(URL.playerList, function (err, data) {
 		var json  = JSON.parse(data);
-		res.send(json);
+		res.jsonp(json);
 	});	
 };
 
@@ -253,7 +253,7 @@ exports.playersLog = function(req,res){
 					if(myClass=='total') return false;
 				});
 			//breaks if tr class = total	
-			res.send(logs);							
+			res.jsonp(logs);							
 		});
 };
 
@@ -333,7 +333,7 @@ exports.players = function(req, res){
 				turnovers: turnovers
 				}
 			});
-		res.send(playerInfo);
+		res.jsonp(playerInfo);
 	});
 };
 
