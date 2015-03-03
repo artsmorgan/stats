@@ -11,6 +11,7 @@ var path = require('path');
 
 var nba = require('./routes/nba');
 var nbaEspn = require('./routes/nbaEspn');
+var nbaCbs = require('./routes/nbaCbs');
 
 
 var app = express();
@@ -49,8 +50,7 @@ app.get('/nba/players/:playerId', nba.players);*/
 /********* N B A  -  E S P N *********/
 app.get('/nba/teams',nbaEspn.teams);
 app.get('/nba/teams/:teamId/roster',nbaEspn.teamRoster); //List players by team (team roster)
-//app.get('/nba/schedules',nbaEspn.schedule);
-app.get('/nba/schedules',nba.schedule);
+app.get('/nba/schedules',nbaCbs.schedule);
 app.get('/nba/players/:playerId',nbaEspn.players);
 app.get('/nba/players/:playerId/logs',nbaEspn.playersLog);
 
