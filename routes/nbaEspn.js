@@ -171,7 +171,7 @@ exports.schedule = function(req, res){
 			scheduleList.push(schedule);
 			
 		})
-		res.send(scheduleList);
+		res.jsonp(scheduleList);
 	});
 };
 
