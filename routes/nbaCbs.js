@@ -60,7 +60,8 @@ exports.schedule = function(req, res){
 								home: home,
 								time: time,
 								arena:arena,
-								date: date
+								date: date,
+								url: URL
 							});
 						}
 					}	
