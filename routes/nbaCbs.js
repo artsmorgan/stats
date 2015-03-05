@@ -18,8 +18,20 @@ var cheerio = require('cheerio')
 * @return JSON response
 */
 exports.schedule = function(req, res){
+
+	var currentDate = new Date();
+	var month = (currentDate.getMonth() + 1)
+		month = (month>=10) ? month : '0'+month;
+
+	var day = currentDate.getDay()+1;
+		day = (day>=10) ? day : '0'+day;
+	
+	var date = month+''+day;
+
+	var url  = "http://www.cbssports.com/nba/schedules/day/"+date+"/regular";
+
 	var scheduleList = [];
-	curl.request(URL.schedule, function (err, data) {
+	curl.request(url, function (err, data) {
 		$ = cheerio.load(data);
 		var content =  $('.data');			
 		var schedule = [];

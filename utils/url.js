@@ -3,16 +3,8 @@
 * @return {}
 */
 exports.url = function(req, res){ 
-	var nbaSeason = '2014-15';
 
-	var currentDate = new Date();
-	var month = (currentDate.getMonth() + 1)
-		month = (month>=10) ? month : '0'+month;
-
-	var day = currentDate.getDay()+1;
-		day = (day>=10) ? day : '0'+day;
-	
-	var date = month+''+day;	
+	var nbaSeason = '2014-15';	
 
 	return {
 		nba: {
@@ -33,7 +25,7 @@ exports.url = function(req, res){
 			playerLogs: "http://espn.go.com/nba/player/gamelog/_/id/" // + playerId, ex: + 3992
 		},
 		nbaCbs:{
-			schedule: "http://www.cbssports.com/nba/schedules/day/"+date+"/regular"
+			// schedule: "http://www.cbssports.com/nba/schedules/day/"+date+"/regular"
 		}
 	};
 };
